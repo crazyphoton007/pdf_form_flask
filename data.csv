@@ -1,0 +1,2 @@
+user_name,set_number,total_sets,special_study_number_top,special_study_number,number_of_plates,sample_id_range,goal_of_study,new_sample_id_range_split,user_dropped,date_dropped,user_transferred,date_transferred,new_sample_id_range_separation,standard_operating_procedure,standard_lot_number,extraction_buffer,dilution_buffer,liquid_transfer_machine_id,changes_to_procedure,date_of_drop_off,drop_off_location
+vikas,1,1,1,1,1,1,testing purpose,1,1,1,1,1,1,1,1,1,1,1,test,12/24/2023,12/24/2023

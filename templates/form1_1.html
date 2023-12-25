@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Extractions Only - Documentation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Changed to column layout */
+            align-items: center; /* Align items horizontally */
+            background-color: #8e8686;
+        }
+        
+        .a4-container {
+            width: 1000px; /* Adjusted width */
+            max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+            height: auto; /* Adjust height automatically */
+            margin-top: 20px; /* Add margin to the top */
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+            box-sizing: border-box;
+        }
+        .form-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .section-header {
+            font-style: italic;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], textarea {
+            width: calc(100% - 10px); /* Full width minus padding */
+            box-sizing: border-box;
+        }
+        .input-field {
+            border: none;
+            border-bottom: 1px solid #000;
+            margin-bottom: 15px;
+            padding: 5px;
+        }
+        textarea {
+            resize: none; /* Disables resizing */
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-container">
+        <!-- Error Message Display -->
+        {% if error_message %}
+        <div style="color: red; margin-bottom: 10px;">
+            {{ error_message }}
+        </div>
+        {% endif %}
+
+
+        <!-- Success Message Display -->
+        {% if success_message %}
+        <div style="color: green; margin-bottom: 10px;">
+            {{ success_message }}
+        </div>
+        {% endif %}
+
+       <form action="/" method="post">
+        <div class="form-title">
+            EXTRACTIONS ONLY: In the event of sample split, this sheet represents set 
+            <input type="text" class="input-field" name="set_number" style="width: 50px;"> 
+            of 
+            <input type="text" class="input-field" name="total_sets" style="width: 50px;"> 
+            of Special Study #
+            <input type="text" class="input-field" name="special_study_number_top" style="width: 100px;">
+        </div>
+
+        <div class="form-title">Special Study Documentation Form</div>
+        <div class="section-header">Trait Purity Special Studies only</div>
+
+        <label>Special Study #:</label>
+        <input type="text" class="input-field" name="special_study_number">
+
+        <label>Number of Plates:</label>
+        <input type="text" class="input-field" name="number_of_plates">
+
+        <label>Sample ID Range:</label>
+        <input type="text" class="input-field" name="sample_id_range">
+
+        <label>Goal of Study:</label>
+        <textarea name="goal_of_study" rows="4" class="input-field"></textarea>
+
+        <div class="section-header">SAMPLE MANAGEMENT PERSONNEL ONLY ABOVE THIS LINE</div>
+
+        <label>In the event of sample split ONLY, new Sample ID Range:</label>
+        <input type="text" class="input-field" name="new_sample_id_range_split">
+
+        <label>User (Dropped):</label>
+        <input type="text" class="input-field" name="user_dropped">
+
+        <label>Date (Dropped):</label>
+        <input type="text" class="input-field" name="date_dropped">
+
+        <label>User (Transferred):</label>
+        <input type="text" class="input-field" name="user_transferred">
+
+        <label>Date (Transferred):</label>
+        <input type="text" class="input-field" name="date_transferred">
+
+        <label>In the event of sample separation ONLY, new Sample ID Range:</label>
+        <input type="text" class="input-field" name="new_sample_id_range_separation">
+
+        <label>Standard Operating Procedure utilized:</label>
+        <input type="text" class="input-field" name="standard_operating_procedure">
+
+        <label>Standard Lot #:</label>
+        <input type="text" class="input-field" name="standard_lot_number">
+
+        <label>Extraction Buffer:</label>
+        <input type="text" class="input-field" name="extraction_buffer">
+
+        <label>Dilution Buffer:</label>
+        <input type="text" class="input-field" name="dilution_buffer">
+
+        <label>Liquid transfer machine identification number:</label>
+        <input type="text" class="input-field" name="liquid_transfer_machine_id">
+
+        <label>Any changes to procedure:</label>
+        <textarea name="changes_to_procedure" rows="4" class="input-field"></textarea>
+
+        <label>Date of Drop Off:</label>
+        <input type="text" class="input-field" name="date_of_drop_off">
+
+        <label>Drop Off Location:</label>
+        <input type="text" class="input-field" name="drop_off_location">
+        
+        <!-- User Name -->
+        <label>User Name:</label>
+        <input type="text" class="input-field" name="user_name">
+
+        <!-- Submit Button -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <input type="submit" value="Submit" class="submit-button">
+            <span style="flex: 1;"></span> <!-- This empty span creates space between the fields -->
+        </div>
+    </div>
+</body>
+</html>
