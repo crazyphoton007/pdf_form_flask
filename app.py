@@ -17,7 +17,7 @@ mandatory_fields = [
 ]
 
 
-csv_file_path = '/home/vikas/pdf_form_flask_application/data.csv'  
+csv_file_path = '/home/vikas/pdf_form_flask/data.csv'  
 if not os.path.isfile(csv_file_path):
     with open(csv_file_path, 'w', newline='') as file:
         writer = csv.writer(file)
